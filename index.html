@@ -59,7 +59,7 @@
     <!-- Top Bar End -->
 
     <!-- Nav Bar Start -->
-    <div class="navbar navbar-expand-lg bg-dark navbar-dark">
+    <div class="navbar navbar-sticky navbar-expand-lg bg-dark navbar-dark">
         <div class="container-fluid">
             <a href="index.html" class="navbar-brand"> <img src="img/logo2.svg" alt="logo"> Rescate de Patitas</a>
             <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
@@ -103,7 +103,7 @@
             </div>
         </div>
     </div>
-    <!-- Nav Bar End -->
+    <!--Nav Bar End -->
 
 
 
@@ -429,7 +429,135 @@
 
 
 
-    <!-- Footer Start -->
+    <!--Section: Contact v.1-->
+    <div class="footer wow fadeIn" data-wow-delay="0.3s">
+        <div class="container-fluid">
+            
+                <div class="row">
+                    <!--Grid column-->
+                    <div class="col-lg-7">
+                        <!--Google map-->
+                        <div id="map-container-google-11" class="z-depth-1-half map-container-6" style="height: 400px">
+                            <div class="footer-info">
+                                <div id="map" style="width:100%;height:400px;"></div>
+                            </div>
+                            <script type="text/javascript">
+                                var locations = [
+                                    ['Huellitas', -34.6335328, -58.4921025, 4],
+                                    ['Naricitas frias', -34.5888834, -58.5455626, 5],
+                                    ['El hogar de Claudia', -34.6038713, -58.5754228, 3],
+                                    ['Ayudacan', -34.6321582, -58.468661, 2],
+                                    ['El refugio', -34.6766714, -58.4790033, 1]
+                                ];
+
+                                var map = new google.maps.Map(document.getElementById('map'), {
+                                    zoom: 10,
+                                    center: new google.maps.LatLng(-34.6157437, -58.5733847),
+                                    mapTypeId: google.maps.MapTypeId.ROADMAP
+                                });
+
+                                var infowindow = new google.maps.InfoWindow();
+
+                                var marker, i;
+
+                                for (i = 0; i < locations.length; i++) {
+                                    marker = new google.maps.Marker({
+                                        position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+                                        map: map
+                                    });
+
+                                    google.maps.event.addListener(marker, 'click', (function (marker, i) {
+                                        return function () {
+                                            infowindow.setContent(locations[i][0]);
+                                            infowindow.open(map, marker);
+                                        }
+                                    })(marker, i));
+                                }
+                            </script>
+                        </div>
+
+                        <br>
+                        <!--Buttons-->
+                        <div class="row text-center">
+                            <div class="col-md-4">
+                                <a class="btn-floating blue accent-1"><i class="fas fa-map-marker-alt"></i></a>
+                                <p>Buenos Aires</p>
+                                <p>Argentina</p>
+                            </div>
+
+                            <div class="col-md-4">
+                                <a class="btn-floating blue accent-1"><i class="fas fa-phone"></i></a>
+                                <p>+ 11 1111 1111</p>
+                                <p>Lun - Vie, 8:00-22:00</p>
+                            </div>
+
+                            <div class="col-md-4">
+                                <a class="btn-floating blue accent-1"><i class="fas fa-envelope"></i></a>
+                                <p>rescatedds@gmail.com</p>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!--Grid column-->
+
+                    <!--Grid column-->
+                    <div class="col-lg-5 mb-4">
+                        <!--Form with header-->
+                        <div class="card">
+                            <div class="card-body">
+                                <!--Header-->
+                                <div class="form-header blue accent-1">
+                                    <h3><i class="fas fa-envelope"></i> Escribinos:</h3>
+                                </div>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                                <br>
+                                <!--Body-->
+                                <div class="md-form">
+                                    <i class="fas fa-user prefix grey-text"></i>
+                                    <input type="text" id="form-name" class="form-control">
+                                    <label for="form-name">Nombre</label>
+                                </div>
+                                <div class="md-form">
+                                    <i class="fas fa-envelope prefix grey-text"></i>
+                                    <input type="text" id="form-email" class="form-control">
+                                    <label for="form-email">Correo electrónico</label>
+                                </div>
+                                <div class="md-form">
+                                    <i class="fas fa-tag prefix grey-text"></i>
+                                    <input type="text" id="form-Subject" class="form-control">
+                                    <label for="form-Subject">Asunto</label>
+                                </div>
+                                <div class="md-form">
+                                    <i class="fas fa-pencil-alt prefix grey-text"></i>
+                                    <textarea id="form-text" class="form-control md-textarea" rows="3"></textarea>
+                                    <label for="form-text">Mensaje</label>
+                                </div>
+
+                                <div class="text-center mt-4">
+                                    <button class="btn btn-light-blue">Enviar</button>
+                                </div>
+                            </div>
+                        </div>
+                        <!--Form with header-->
+                    </div>
+                    <!--Grid column-->
+                </div>
+            
+
+            <div class="copyright d-none d-md-block">
+                <div class="row">
+                    <div class="col-md-12">
+                        <p>Copyright &copy; 2021<a href="#"> RescateDePatitas</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Section: Contact v.1-->
+
+
+
+    <!-- Footer Start 
     <div class="footer wow fadeIn" data-wow-delay="0.3s">
         <div class="container-fluid">
             <div class="row align-items-center">
@@ -446,7 +574,9 @@
                     </div>
                 </div>
                 <div class="col-sm-12 col-md-6">
-                    <div id="map" style="width: 500px; height: 400px;"></div>
+                    <div class="footer-info">
+                            <div id="map" style="width:100%;height:400px;"></div>
+                    </div>
                     <script type="text/javascript">
                         var locations = [
                             ['Huellitas', -34.6335328, -58.4921025, 4],
@@ -493,7 +623,9 @@
 
     </div>
 
-    <!-- Footer End -->
+    Footer End -->
+
+
 
     <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
 
