@@ -993,6 +993,7 @@ a:focus {
 
 .footer .container-fluid {
     padding: 60px 0 0 0 60px;
+    color: #ffffff;
     background-repeat:repeat;
     background: linear-gradient(rgba(0, 148, 223, .9),rgba(0, 148, 223, .9)),url(../img/paw.svg);
     background-position: center;
