@@ -1,0 +1,47 @@
+{{#partial "content"}}
+    <div class="blog top">
+        <div class="container">
+            <div class="section-header text-center wow zoomIn" data-wow-delay="0.1s">
+                <p>Están buscando una mascota</p>
+                <h2>Adoptantes</h2>
+            </div>
+            <div class="row blog-page">
+                {{#each publicaciones}}
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
+                        <div class="blog-item">
+                            <div class="blog-img">
+                                <img src="/img/usuario.png" alt="Foto usuario">
+                            </div>
+                            <div class="blog-text">
+                                <h2>{{adoptante.nombre}}</h2>
+                                <h6>Publicada el {{fecha}}</h6>
+                                <a class="btn-mis" href="adoptantes/{{id}}">Ver perfil <i class="fa fa-angle-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                {{/each}}
+            </div>
+        </div>
+    </div>
+{{/partial}}
+
+{{#eq rol null}}
+
+    {{> layout.hbs}}
+
+{{/eq}}
+{{#eq rol "Duenio"}}
+
+    {{> layout_duenio.hbs}}
+
+{{/eq}}
+{{#eq rol "Voluntario"}}
+
+    {{> layout_voluntario.hbs}}
+
+{{/eq}}
+{{#eq rol "Rescatista"}}
+
+    {{> layout_rescatista.hbs}}
+
+{{/eq}}

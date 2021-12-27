@@ -1,0 +1,131 @@
+{{#partial "content"}}
+    <!-- Single Post Start-->
+    <div class="single">
+        <div class="container top">
+            <div class="row">
+                <h3>Publicacion Nro {{publicacion.id}}</h3>
+                <p>Fecha: {{publicacion.fecha}}</p>
+                <div class="col-lg-6">
+                    <div class="single-content wow fadeInUp">
+                        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                            <ol class="carousel-indicators">
+                                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                            </ol>
+                            <div class="carousel-inner">
+                                {{#each publicacion.mascota.fotos}}
+                                <div class="carousel-item active">
+                                    <img class="d-block w-100" src="../{{uRLfoto}}" alt="First slide">
+                                </div>
+                                {{/each}}
+                            </div>
+                            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button"
+                                data-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Anterior</span>
+                            </a>
+                            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button"
+                                data-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Siguiente</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="sidebar">
+                        <div class="sidebar-widget wow fadeInUp">
+                            <h4 class=" wavyp">Mascota perdida</h4>
+                            <div class="text-widget">
+                                <div class="text-widget">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <p>Nombre: {{publicacion.mascota.nombre}}</p>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <p>Apodo: {{publicacion.mascota.apodo}}</p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <p>Sexo: {{publicacion.mascota.genero}}</p>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <p>Tamaño: {{publicacion.mascota.tamanio}}</p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <p>Edad: {{publicacion.mascota.edad}} años</p>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <p>Castrada: Sí</p>
+                                        </div>
+
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-5">
+                                            <p>Sociable con gatos: No</p>
+                                        </div>
+                                        <div class="col-md-5">
+                                            <p>Sociable con perros: Sí</p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-5">
+                                            <p>Sociable con niños: Sí</p>
+                                        </div>
+                                    </div>
+                                    <p>
+                                    <h6>Más info:</h6>
+                                    {{publicacion.mascota.descripcion}}
+                                    </p>
+
+                                    <div class="conteiner">
+                                        <div class="row  justify-content-center">
+                                            <div class="py-2 col-4">
+                                                <a class="btn-grande" href="/aprobar_perdida/{{publicacion.id}}" method="post"
+                                                    style="background-color: green;">APROBAR</a>
+                                            </div>
+                                            <div class=" py-2 col-4">
+                                                <a class="btn-grande" href="/rechazar_perdida/{{publicacion.id}}" method="post"
+                                                    style="background-color: red;">RECHAZAR</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    </div>
+    <!-- Single Post End-->
+{{/partial}}
+
+{{#eq rol null}}
+
+    {{> layout.hbs}}
+
+{{/eq}}
+{{#eq rol "Duenio"}}
+
+    {{> layout_duenio.hbs}}
+
+{{/eq}}
+{{#eq rol "Voluntario"}}
+
+    {{> layout_voluntario.hbs}}
+
+{{/eq}}
+{{#eq rol "Rescatista"}}
+
+    {{> layout_rescatista.hbs}}
+
+{{/eq}}

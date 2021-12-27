@@ -1,0 +1,92 @@
+{{#partial "content"}}
+    <!-- Main content -->
+    <div class="content top text-center">
+        <div class="container-fluid">
+            <div class="py-5 text-center">
+                <br> <br>
+                <h2 class="wavyy">Agregue una pregunta</h2>
+            </div>
+            <div class="row centrar">
+                <div class="col-md-6">
+                    <div class="form-group container">
+                        <form class="needs-validation form-" action="/admin_caracteristica" method="post" novalidate>
+                            <div class="col-md-6">
+                                <label for="general" class="form-label">Selecciona el tipo de pregunta:</label>
+                                <select class="form-select" id="asociacion" name="tipo" required>
+                                    <option value="" selected="selected">...</option>
+                                    {{#each tipo}}
+                                        <option value="{{this}}">{{this}}</option>
+                                    {{/each}}
+                                </select>
+                                <div class="invalid-feedback">
+                                    Por favor, seleccione un tipo de pregunta.
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="pregunta" class="form-label">Pregunta:</label>
+                                <input type="text" class="form-control" id="pregunta" value=""
+                                       name="pregunta"
+                                       required>
+                                <div class="invalid-feedback">
+                                    Ingrese una pregunta.
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="preguntaMascota" class="form-label">Pregunta en mascota:</label>
+                                <input type="text" class="form-control" id="preguntaMascota" value=""
+                                       name="preguntaMascota"
+                                       required>
+                                <div class="invalid-feedback">
+                                    Ingrese una pregunta.
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="general" class="form-label">Numero de respuestas:</label>
+                                <input type="number" id="member" name="member" value="">
+                                <a href="#" id="filldetails" onclick="addFields()">Generar respuestas</a>
+                                <br> <br>
+                                <div id="container">
+                                </div>
+
+
+                                <hr class="my-4">
+                                <div class="text-center">
+                                    <button class="btn-grande text-uppercase fw-bold mb-2" type="submit">Agregar
+                                        Pregunta
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{{/partial}}
+
+
+{{#eq rol null}}
+
+    {{> layout.hbs}}
+
+{{/eq}}
+{{#eq rol "Duenio"}}
+
+    {{> layout_duenio.hbs}}
+
+{{/eq}}
+{{#eq rol "Voluntario"}}
+
+    {{> layout_voluntario.hbs}}
+
+{{/eq}}
+{{#eq rol "Rescatista"}}
+
+    {{> layout_rescatista.hbs}}
+
+{{/eq}}
+{{#eq rol "Administrador"}}
+
+    {{> layout_admin.hbs}}
+
+{{/eq}}

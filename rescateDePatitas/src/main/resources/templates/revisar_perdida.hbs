@@ -1,0 +1,64 @@
+{{#partial "content"}}
+    <!-- Blog Start -->
+    <div class="blog top">
+        <div class="container">
+            <div class="section-header text-center wow zoomIn" data-wow-delay="0.1s">
+                <p>Pendientes de aprobación</p>
+                <h2>Perdidas</h2>
+            </div>
+            
+            <div class="row blog-page">
+                {{#each perdidas}}
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.0s">
+                    <div class="blog-item">
+                        <div class="blog-img">
+                            <img src="{{mascota.fotos.[0].uRLfoto}}" alt="Blog">
+                        </div>
+                        <div class="blog-text">
+                            <h2>{{mascota.nombre}}</h2>
+                            <p>
+                                {{mascota.descripcion}}
+                            </p>
+                            <a class="btn-mis" href="/revisar_perdida/{{id}}">Revisar <i
+                                    class="fa fa-angle-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                {{/each}}
+                <div class="row">
+                    <div class="col-12">
+                        <ul class="pagination justify-content-center">
+                            <li class="page-item disabled"><a class="page-link" href="#">Anterior</a></li>
+                            <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                            <li class="page-item"><a class="page-link" href="#">Siguiente</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Portfolio End -->
+{{/partial}}
+
+{{#eq rol null}}
+
+    {{> layout.hbs}}
+
+{{/eq}}
+{{#eq rol "Duenio"}}
+
+    {{> layout_duenio.hbs}}
+
+{{/eq}}
+{{#eq rol "Voluntario"}}
+
+    {{> layout_voluntario.hbs}}
+
+{{/eq}}
+{{#eq rol "Rescatista"}}
+
+    {{> layout_rescatista.hbs}}
+
+{{/eq}}

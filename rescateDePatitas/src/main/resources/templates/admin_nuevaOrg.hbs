@@ -1,0 +1,88 @@
+{{#partial "content"}}
+        <!-- Main content -->
+        <div class="content_wrapper text-center">
+        <div class="content top text-center">
+            <div class="container-fluid text-center">
+                <div class="py-5 text-center">
+                    <br> <br>
+                    <h2 class="wavyy">Cree una Asociación</h2>
+                </div>
+                <div class="row g-3 centrar">
+                        <div class="col-lg-8 text-center">
+                            <div class="form-group container text-center">
+                                <form class="needs-validation form-" action="/admin_nueva_asociacion" method="post" novalidate>
+                                    <div class="row g-3">
+                                    <h4 class="mb-3">Nombre de la asociación</h4>
+                                        <div class="text-center centrar">
+                                        <input type="text" class="form-control" id="nombreOrganizacion" placeholder="Asociación"
+                                               value=""
+                                               name="nombreOrg"
+                                               required>
+                                        <div class="invalid-feedback">
+                                            Por favor, ingrese el nombre de la asociación.
+                                        </div>
+                                        </div>
+                                    </div>
+                                    <h4 class="mb-3">Ubicación de la Asociación:</h4>
+                                    <p>Seleccioná la ubicación en el mapa:</p>
+                                    <div class="row g-3">
+                                        <div class="col-md-12">
+                                            <div id="mapa" style="width: 100%; height: 450px">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row g-3">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label for="latitud">Latitud</label>
+                                                <input type="text" id="latitud" class="form-control" name="latitud">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label for="longitud">Longitud</label>
+                                                <input type="text" id="longitud" class="form-control" name="longitud">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <hr class="my-4">
+                                    <div class="text-center">
+                                        <button class="btn-grande text-uppercase fw-bold mb-2" type="submit">CREAR</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{{/partial}}
+
+{{#eq rol null}}
+
+    {{> layout.hbs}}
+
+{{/eq}}
+{{#eq rol "Duenio"}}
+
+    {{> layout_duenio.hbs}}
+
+{{/eq}}
+{{#eq rol "Voluntario"}}
+
+    {{> layout_voluntario.hbs}}
+
+{{/eq}}
+{{#eq rol "Rescatista"}}
+
+    {{> layout_rescatista.hbs}}
+
+{{/eq}}
+{{#eq rol "Administrador"}}
+
+    {{> layout_admin.hbs}}
+
+{{/eq}}

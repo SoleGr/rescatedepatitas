@@ -1,0 +1,144 @@
+{{#partial "content"}}
+
+    <div class="single">
+        <div class="container top">
+            <div class="row">
+                <h3>Publicacion Nro <span>{{publicacion.id}}</span></h3>
+                <h3> {{publicacion.adoptante.nombre}}</h3>
+                <p>Fecha: {{publicacion.fecha}}</p>
+                <div class="col-lg-6">
+                    <div class="single-content wow fadeInUp">
+                        <div class="carousel-item">
+                            <img src="../usuario.png" alt="Foto usuario">
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="sidebar">
+                        <div class="sidebar-widget wow fadeInUp">
+                            <h2 class="wavyy">Quiere adoptar</h2>
+                            <div class="text-widget">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <h6>Edad:</h6>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <h6>{{publicacion.adoptante.edad}}</h6>
+                                    </div>
+                                </div>
+                                {{#each publicacion.cuestionarioPreferenciasYComodidades.respuestas}}
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <h6>{{pregunta.pregunta}}</h6>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <h6>{{respuesta}}</h6>
+                                        </div>
+                                    </div>
+                                {{/each}}
+                                <h6>Más info:</h6>
+                                <p>
+                                {{publicacion.mascota.descripcion}}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {{#if usuario}}
+        <div class="container">
+            <div class=" text-center form-check">
+                <input type="checkbox" class="form-check-input" id="save-info" required>
+                <label class="form-check-label" for="save-info">Acepto que se envíen mis datos de contacto al
+                    responsable</label>
+            </div>
+        </div>
+        <div class="py-3 container text-center">
+            <a class="btn-grande" href="../enviar_datos_adopcion/{{publicacion.id}}" method="post">¡Es mi mascota!</a>
+        </div>
+    {{/if}}
+
+
+    {{#unless usuario}}
+        <div class="py-3 container text-center">
+            <a class="btn-grande" href="#datos">¡Quiero adoptarla!</a>
+        </div>
+
+
+        <div class="container top" id="datos">
+            <div class="py-5 text-center" id="form">
+                <br> <br>
+                <h2>Datos de contacto <i class="fas fa-paw"></i></h2>
+                <p class="lead">Enviaremos tu contacto al responsable de la mascota para que se contacte con vos.
+                </p>
+            </div>
+
+            <form class="text-center text-md-left" action="/en_adopcion/{{publicacion.id}}" method="post" novalidate>
+                <div class="form-group row">
+                    <label for="name" class="col-sm-2 col-form-label fw-bold">Tu nombre : </label>
+                    <div class="col-sm-2">
+                        <input type="text" class="form-control" name="nombre" placeholder="Nombre">
+                    </div>
+                    <label for="email" class="col-sm-2 col-form-label fw-bold">Correo electrónico : </label>
+                    <div class="col-sm-4">
+                        <input type="email" class="form-control" name="email" placeholder="Correo electrónico">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="telefono" class="col-sm-2 col-form-label fw-bold">Teléfono : </label>
+                    <div class="col-sm-2">
+                        <input type="text" class="form-control" id="telefono" name="numero"
+                               placeholder="+541123456789">
+                    </div>
+
+                    <label for="medio" class="col-sm-2 col-form-label fw-bold">Medio preferido : </label>
+                    <div class="col-sm-3">
+                        <select class="form-select" id="medio" name="medioPreferido" required>
+                            <option value="">Elegí...</option>
+                            <option value="Email">Email</option>
+                            <option value="WhatsApp">WhatsApp</option>
+                            <option value="SMS">SMS</option>
+                        </select>
+                        <div class="invalid-feedback">
+                            Elegí un medio de comunicación.
+                        </div>
+                    </div>
+                </div>
+
+                <hr class="my-4">
+                <div class="col-sm-12 text-center py-5">
+                    <p>
+                        <button class="btn-grande" style="color: #fff" type="submit">QUIERO ADOPTARLA</button>
+                    </p>
+                </div>
+            </form>
+        </div>
+    {{/unless}}
+
+{{/partial}}
+
+{{#eq rol null}}
+
+    {{> layout.hbs}}
+
+{{/eq}}
+{{#eq rol "Duenio"}}
+
+    {{> layout_duenio.hbs}}
+
+{{/eq}}
+{{#eq rol "Voluntario"}}
+
+    {{> layout_voluntario.hbs}}
+
+{{/eq}}
+{{#eq rol "Rescatista"}}
+
+    {{> layout_rescatista.hbs}}
+
+{{/eq}}

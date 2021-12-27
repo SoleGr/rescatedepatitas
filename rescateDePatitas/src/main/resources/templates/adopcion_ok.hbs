@@ -1,0 +1,39 @@
+{{#partial "content"}}
+<!-- Datos de registro-->
+    <div class="register">
+        <div class="container">
+            <div class="py-5 text-center">
+                <br> <br>
+                <h2>Registro exitoso</h2>
+                <p class="lead">Nos comunicaremos con vos para enviarte la chapita con QR.</p>
+                <i class="far fa-7x fa-check-circle" style="color: green;"></i>
+                <br>
+                <img class="img-fluid" src="img/ok.png" alt="">
+            </div>
+        </div>
+
+        <br>
+    </div>
+    <!-- Datos de registro-->
+{{/partial}}
+
+{{#eq rol null}}
+
+    {{> layout.hbs}}
+
+{{/eq}}
+{{#eq rol "Duenio"}}
+
+    {{> layout_duenio.hbs}}
+
+{{/eq}}
+{{#eq rol "Voluntario"}}
+
+    {{> layout_voluntario.hbs}}
+
+{{/eq}}
+{{#eq rol "Rescatista"}}
+
+    {{> layout_rescatista.hbs}}
+
+{{/eq}}

@@ -1,0 +1,70 @@
+{{#partial "content"}}
+    <!-- Datos de registro-->
+    <div class="register">
+        <div class="container">
+            <div class="py-5 text-center">
+                <br> <br>
+                <h2 class="wavyy">Registro de mascota</h2>
+                <p class="lead">Último paso: elegí una asociación</p>
+
+            </div>
+            <div class="row">
+                <div class="col-lg-8">
+                    <form class="needs-validation form-" action="/elegir_asociacion" method="post" novalidate>
+                        <div class="row g-3">
+                            <h4 class="mb-3 wavyp">Asociaciones:</h4>
+
+                            <p>Seleccioná una asociación:</p>
+                            <div class="col-sm-6">
+                                    <label for="general" class="form-label">Asociación</label>
+                                    <select class="form-select" id="state" name="asociacion" required>
+                                        <option value="" selected="selected">...</option>
+                                        {{#each organizaciones}}
+                                            <option value="{{nombre}}">{{nombre}}</option>
+                                        {{/each}}
+                                    </select>
+                                    <div class="invalid-feedback">
+                                        Por favor, elegí una respuesta.
+                                    </div>
+                            </div>
+
+                        </div>
+                    
+                        <hr class="my-4">
+                        <div class="text-center">
+                            <button class="btn-grande text-uppercase fw-bold mb-2" type="submit">Registrar mascota</button>
+                        </div>
+                </div>
+                </form>
+                <!--------------------------------------------Foto derecha--------------------------------------------->
+                <div class="col-lg-3">
+                    <div class="col-md-5 col-lg-4 order-md-last">
+                        <img class="register-img d-none d-lg-block" src="img/pet-register.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Datos de registro-->
+{{/partial}}
+
+{{#eq rol null}}
+
+    {{> layout.hbs}}
+
+{{/eq}}
+{{#eq rol "Duenio"}}
+
+    {{> layout_duenio.hbs}}
+
+{{/eq}}
+{{#eq rol "Voluntario"}}
+
+    {{> layout_voluntario.hbs}}
+
+{{/eq}}
+{{#eq rol "Rescatista"}}
+
+    {{> layout_rescatista.hbs}}
+
+{{/eq}}

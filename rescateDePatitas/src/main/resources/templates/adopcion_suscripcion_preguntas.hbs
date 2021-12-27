@@ -1,0 +1,63 @@
+{{#partial "content"}}
+
+    <div class="container top">
+        <div class="py-5 text-center">
+            <br> <br>
+            <h2>Último paso <i class="far fa-question-circle" style="color:#ffcc00;"></i></h2>
+            <p class="lead"> Contestá estas preguntas de la asociación que elegiste
+            </p>
+        </div>
+
+        <form class="text-center text-md-left" action="/preguntas_asociacion" method="post" novalidate>
+
+            <fieldset class="form-group">
+                <div class="row text-center text-md-left">
+                    <div class="col-sm-2 fw-bold text-center text-md-left wavyy">Sobre vos:</div>
+                    {{#each organizacionPreguntas}}
+                    <div class="col-sm-2 ">
+                        <label for="general" class="form-label">{{pregunta}}</label>
+                        <select class="form-select" id="state" name="{{pregunta}}" required>
+                            <option value="" selected="selected">...</option>
+                            {{#each respuestas}}
+                            <option value="{{.}}">{{.}}</option>
+                                {{/each}}
+                        </select>
+                        <div class="invalid-feedback">
+                                Por favor, elegí una respuesta.
+                        </div>
+                    </div>
+                    {{/each}}
+                </div>
+            </fieldset>
+            <hr class="my-4">
+            <div class="col-sm-12 text-center py-5">
+                <p>
+                    <button class="btn-grande text-uppercase" style="color: #fff" type="submit">Suscribirme</button>
+                </p>
+            </div>
+        </form>
+    </div>
+
+
+{{/partial}}
+
+{{#eq rol null}}
+
+    {{> layout.hbs}}
+
+{{/eq}}
+{{#eq rol "Duenio"}}
+
+    {{> layout_duenio.hbs}}
+
+{{/eq}}
+{{#eq rol "Voluntario"}}
+
+    {{> layout_voluntario.hbs}}
+
+{{/eq}}
+{{#eq rol "Rescatista"}}
+
+    {{> layout_rescatista.hbs}}
+
+{{/eq}}

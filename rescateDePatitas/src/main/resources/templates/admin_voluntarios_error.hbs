@@ -1,0 +1,42 @@
+{{#partial "content"}}
+<!-- Datos de registro-->
+    <div class="register">
+        <div class="container centrar">
+            <div class="py-5 text-center">
+                <br> <br>
+                <h2>Error</h2>
+                <p class="lead">El usuario registrado no existe.</p>
+                <br>
+            </div>
+        </div>
+
+        <br>
+    </div>
+    <!-- Datos de registro-->
+{{/partial}}
+
+{{#eq rol null}}
+
+    {{> layout.hbs}}
+
+{{/eq}}
+{{#eq rol "Duenio"}}
+
+    {{> layout_duenio.hbs}}
+
+{{/eq}}
+{{#eq rol "Voluntario"}}
+
+    {{> layout_voluntario.hbs}}
+
+{{/eq}}
+{{#eq rol "Rescatista"}}
+
+    {{> layout_rescatista.hbs}}
+
+{{/eq}}
+{{#eq rol "Administrador"}}
+
+    {{> layout_admin.hbs}}
+
+{{/eq}}

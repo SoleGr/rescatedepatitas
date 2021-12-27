@@ -1,0 +1,95 @@
+{{#partial "content"}}
+    <div class="container-fluid top">
+        <div class="py-5 text-center">
+
+            <!-- Service Start -->
+            <div class="service">
+                <div class="container">
+                    <div class="section-header text-center wow zoomIn" data-wow-delay="0.1s">
+                        <p>Elegí tu rol para</p>
+                        <h2>INGRESAR</h2>
+                    </div>
+                    <div class="row">
+                        {{#each roles}}
+                            {{#eq tipo "Voluntario"}}
+                                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.4s">
+                                    <div class="rol-item">
+                                        <a href="/rol_elegido_voluntario" method="post">
+                                            <div class="service-icon">
+                                                <i class="fas fa-paw"></i>
+                                            </div>
+
+                                            <h3>Voluntario</h3>
+                                        </a>
+                                    </div>
+                                </div>
+                            {{/eq}}
+
+                            {{#eq "Duenio" tipo}}
+                                 <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
+                                    <div class="rol-item">
+                                        <a href="/rol_elegido_duenio" method="post">
+                                            <div class="service-icon">
+                                                <i class="fas fa-dog"></i>
+                                            </div>
+
+                                            <h3>Dueño</h3>
+                                        </a>
+                                    </div>
+                                </div>
+                            {{/eq}}
+
+                            {{#eq tipo "Rescatista"}}
+                                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.6s">
+                                    <div class="rol-item">
+                                        <a href="/rol_elegido_rescatista" method="post">
+                                        <div class="service-icon">
+                                            <i class="fab fa-gratipay"></i>
+                                        </div>
+                                        <h3>Rescatista</h3>
+                                        </a>
+                                    </div>
+                                </div>
+                            {{/eq}}
+
+                            {{#eq tipo "Administrador"}}
+                                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.0s">
+                                    <div class="rol-item">
+                                        <a href="/rol_elegido_admin" method="post">
+                                            <div class="service-icon">
+                                                <i class="fas fa-user-cog"></i>
+                                            </div>
+                                            <h3>Admin</h3>
+                                        </a>
+                                    </div>
+                                </div>
+                            {{/eq}}
+                        {{/each}}
+                    </div>
+                </div>
+            <!-- Service End -->
+            </div>
+        </div>
+    </div>
+{{/partial}}
+
+{{#eq rol null}}
+
+    {{> layout.hbs}}
+
+{{/eq}}
+{{#eq rol "Duenio"}}
+
+    {{> layout_duenio.hbs}}
+
+{{/eq}}
+{{#eq rol "Voluntario"}}
+
+    {{> layout_voluntario.hbs}}
+
+{{/eq}}
+{{#eq rol "Rescatista"}}
+
+    {{> layout_rescatista.hbs}}
+
+{{/eq}}

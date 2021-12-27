@@ -1,0 +1,40 @@
+{{#partial "content"}}
+    <!-- Datos de registro-->
+    <div class="register">
+        <div class="container">
+            <div class="py-5 text-center">
+                <br> <br>
+                <h2>Publicación enviada</h2>
+                <p class="lead">Un voluntario va a evaluar tu publicación</p>
+                <i class="far fa-7x fa-check-circle" style="color: green;"></i>
+                <br>
+                <img class="img-fluid" src="img/ok.png" alt="">
+            </div>
+        </div>
+
+        <br>
+    </div>
+
+{{/partial}}
+
+{{#eq rol null}}
+
+    {{> layout.hbs}}
+
+{{/eq}}
+{{#eq rol "Duenio"}}
+
+    {{> layout_duenio.hbs}}
+
+{{/eq}}
+{{#eq rol "Voluntario"}}
+
+    {{> layout_voluntario.hbs}}
+
+{{/eq}}
+{{#eq rol "Rescatista"}}
+
+    {{> layout_rescatista.hbs}}
+
+{{/eq}}
+

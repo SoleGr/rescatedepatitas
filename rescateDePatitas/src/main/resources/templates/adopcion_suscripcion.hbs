@@ -1,0 +1,221 @@
+{{#partial "content"}}
+
+    <div class="container top">
+        <div class="py-5 text-center">
+            <br> <br>
+            <h2>¿No encontraste lo que buscabas? <i class="far fa-question-circle" style="color:#ffcc00;"></i></h2>
+            <p class="lead">Llená este formulario para que podamos enviarte semanalmente publicaciones de tu interés y
+                generar una publicación.
+            </p>
+        </div>
+
+        <form class="text-center text-md-left" action="/posible_adoptante" method="post" novalidate>
+            {{#unless usuario}}
+                <h4 class="mb-3 wavyp">Tus datos:</h4>
+                <div class="row">
+                    <div class="col-sm-4">
+                        <label for="firstName" class="form-label">Nombre</label>
+                        <input type="text" class="form-control" id="firstName" placeholder="Tu nombre" value=""
+                               name="nombrePersona"
+                               required>
+                        <div class="invalid-feedback">
+                            Ingresá un nombre válido.
+                        </div>
+                    </div>
+
+                    <div class="col-sm-4">
+                        <label for="lastName" class="form-label">Apellido</label>
+                        <input type="text" class="form-control" id="lastName" placeholder="Tu apellido" value=""
+                               name="apellido"
+                               required>
+                        <div class="invalid-feedback">
+                            Ingresá un apellido válido.
+                        </div>
+                    </div>
+                </div>
+            <div class="row">
+                <div class="col-sm-4">
+                    <label for="firstName" class="form-label">Fecha de nacimiento</label>
+                    <input type="date" min="<?= date('Y-m-d'); ?>" class="form-control" id="firstName"
+                           placeholder="dd/mm/aaaa" value=""
+                           name="fnacPersona"
+                           required>
+                    <div class="invalid-feedback">
+                        Ingresá tu fecha de nacimiento.
+                    </div>
+                </div>
+
+                <div class="col-sm-3 ">
+                    <label for="lastName" class="form-label">Tipo</label>
+                    <select class="form-select" id="state" name="tipoDoc" required>
+                        <option value="">...</option>
+                        {{#each tipos}}
+                            <option value="{{.}}">{{.}}</option>
+                        {{/each}}
+                    </select>
+                    <div class="invalid-feedback">
+                        Seleccioná el tipo de documento.
+                    </div>
+                </div>
+
+                <div class="col-sm-3">
+                    <label for="lastName" class="form-label">Nro documento</label>
+                    <input type="text" class="form-control" id="lastName" placeholder="" value="" name="nroDoc"
+                           required>
+                    <div class="invalid-feedback">
+                        Ingresá un número de documento válido.
+                    </div>
+                </div>
+            </div>
+                <div class="row py-3">
+                    <div class="col-md-4">
+                        <label for="country" class="form-label">País</label>
+                        <select class="form-select" id="country" name="pais" required>
+                            <option value="">Elegí...</option>
+                            <option value="argentina">Argentina</option>
+                        </select>
+                        <div class="invalid-feedback">
+                            Por favor, ingresá un país válido.
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <label for="state" class="form-label">Provincia/Estado</label>
+                        <select class="form-select" id="state" name="provincia" required>
+                            <option value="">Elegí...</option>
+                            {{#each provincias}}
+                                <option value="{{.}}">{{.}}</option>
+                            {{/each}}
+                        </select>
+                        <div class="invalid-feedback">
+                            Por favor, ingresá una provincia.
+                        </div>
+                    </div>
+                </div>
+            <div class="row">
+                <div class="col-7">
+                    <label for="address" class="form-label">Dirección</label>
+                    <input type="text" class="form-control" id="address" placeholder="Av. Siempreviva 742"
+                           name="direccion" required>
+                    <div class="invalid-feedback">
+                        Por favor, ingresá la dirección.
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <label for="zip" class="form-label">Código Postal</label>
+                    <input type="text" class="form-control" id="zip" placeholder="" required>
+                    <div class="invalid-feedback">
+                        El código postal es obligatorio.
+                    </div>
+                </div>
+            </div>
+                <hr class="my-4">
+
+                <h4 class="mb-3 wavyp">Contacto:</h4>
+
+                <div class="row g-3">
+
+                    <div class="col-sm-6">
+                        <label for="firstName" class="form-label">Número celular</label>
+                        <input type="text" class="form-control" id="celular" placeholder="+541123456789"
+                               value="" name="cNumero" required>
+                        <div class="invalid-feedback">
+                            Ingrese un número de celular válido.
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6">
+                        <label for="lastName" class="form-label">Correo Electrónico</label>
+                        <input type="text" class="form-control" id="email" placeholder="nombre@correo.com"
+                               value="" name="cCorreo" required>
+                        <div class="invalid-feedback">
+                            Ingrese un correo electrónico válido.
+                        </div>
+                    </div>
+
+                    <div class="col-sm-3">
+                        <label for="medio" class="form-label">Medio preferido</label>
+                        <select class="form-select" id="state" name="medioPreferido" required>
+                            <option value="">Elegí...</option>
+                            <option value="EMAIL">Email</option>
+                            <option value="WHATSAPP">WhatsApp</option>
+                            <option value="SMS">SMS</option>
+                        </select>
+                        <div class="invalid-feedback">
+                            Elegí un medio de comunicación.
+                        </div>
+                    </div>
+                </div>
+            {{/unless}}
+            <!--
+            {{#unless usuario}}
+                <div class="form-group row">
+                    <label for="nombre" class="col-sm-2 col-form-label fw-bold">Tu nombre : </label>
+                    <div class="col-sm-2">
+                        <input type="text" class="form-control" id="nombre" placeholder="Nombre" name="nombre">
+                    </div>
+                    <label for="email" class="col-sm-2 col-form-label fw-bold">Correo electrónico : </label>
+                    <div class="col-sm-4">
+                        <input type="email" class="form-control" id="inputEmail3" placeholder="Correo electrónico"
+                               name="email">
+                    </div>
+                </div>
+            {{/unless}}
+            -->
+
+            <hr class="my-4">
+            <div class="form-group row">
+                <div class="col-sm-6 fw-bold text-center text-md-left wavyy">Tus preferencias y comodidades:</div>
+                <fieldset class="form-group">
+                    <div class="row text-center text-md-left">
+                        {{#each preguntas}}
+                            <div class="col-sm-2 ">
+                                <label for="general" class="form-label">{{pregunta}}</label>
+                                <select class="form-select" id="state" name="{{pregunta}}" required>
+                                    <option value="" selected="selected">...</option>
+                                    {{#each respuestas}}
+                                        <option value="{{.}}">{{.}}</option>
+                                    {{/each}}
+                                </select>
+                                <div class="invalid-feedback">
+                                    Por favor, elegí una respuesta.
+                                </div>
+                            </div>
+                        {{/each}}
+                    </div>
+                </fieldset>
+
+            </div>
+            <hr class="my-4">
+            <div class="col-sm-12 text-center py-5">
+                <p>
+                    <button class="btn-grande text-uppercase" style="color: #fff" type="submit">Suscribirme</button>
+                </p>
+            </div>
+        </form>
+    </div>
+
+
+{{/partial}}
+
+{{#eq rol null}}
+
+    {{> layout.hbs}}
+
+{{/eq}}
+{{#eq rol "Duenio"}}
+
+    {{> layout_duenio.hbs}}
+
+{{/eq}}
+{{#eq rol "Voluntario"}}
+
+    {{> layout_voluntario.hbs}}
+
+{{/eq}}
+{{#eq rol "Rescatista"}}
+
+    {{> layout_rescatista.hbs}}
+
+{{/eq}}

@@ -1,0 +1,79 @@
+{{#partial "content"}}
+
+    <!-- Datos de registro-->
+    <div class="register">
+        <div class="container">
+            <div class="py-5 text-center">
+                <br> <br>
+                <h2 class="wavyy">Publicación realizada <i class="far fa-check-circle" style="color: green;"></i></h2>
+                <p class="lead">Podés comunicarte con algún un hogar de tránsito</p>
+
+            </div>
+            <div class="row">
+                <div class="col-lg-8">
+                    <form class="needs-validation" novalidate>
+                        <div class="row g-3">
+                            <h4 class="mb-3 wavyp">Hogares de tránsito</h4>
+                            <p>Estos son los que admiten a la mascota que ingresaste:</p>
+
+                            <div class="col-sm-12">
+                                {{#each hogares}}
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <p style="font-weight:bold; font-size:20px;text-align: center;">{{nombre}}</p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12"><p>Teléfono: {{telefono}}</p></div>
+                                        <div class="col-md-12"><p>Dirección: {{direccion.direccion}}</p></div>
+                                    </div>
+                                    <br>
+                                    <div class="row">
+                                        {{#if caracteristicas}}
+                                        <p>*El hogar necesita que cumpla con estas características:*</p>
+                                        {{/if}}
+                                        {{#each caracteristicas}}
+                                            <p>{{.}}</p>
+                                        {{/each}}
+                                    </div>
+                                    <hr class="my-4">
+                                {{/each}}
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <!--------------------------------------------Foto derecha--------------------------------------------->
+                <div class="col-lg-3">
+                    <div class="col-md-5 col-lg-4 order-md-last">
+                        <img class="register-img d-none d-lg-block" src="img/pet-register.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Datos de registro-->
+
+
+{{/partial}}
+
+{{#eq rol null}}
+
+    {{> layout.hbs}}
+
+{{/eq}}
+{{#eq rol "Duenio"}}
+
+    {{> layout_duenio.hbs}}
+
+{{/eq}}
+{{#eq rol "Voluntario"}}
+
+    {{> layout_voluntario.hbs}}
+
+{{/eq}}
+{{#eq rol "Rescatista"}}
+
+    {{> layout_rescatista.hbs}}
+
+{{/eq}}

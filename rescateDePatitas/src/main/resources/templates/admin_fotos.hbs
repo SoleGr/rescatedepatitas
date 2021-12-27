@@ -1,0 +1,63 @@
+{{#partial "content"}}
+        <!-- Main content -->
+        <div class="content top text-center">
+          <div class="container-fluid">
+              <div class="py-5 text-center">
+                  <br> <br>
+                  <h2 class="wavyy">Seleccione dimensiones para las fotos</h2>
+              </div>
+            <div class="row centrar">
+                <div class="col-md-6">
+                    <div class="form-group container">
+                        <form class="needs-validation form-" action="/admin_fotos" method="post" novalidate>
+                            <div class="col-md-6">
+                                <label for="altura" class="form-label">Alto:</label>
+                                <input type="number" class="form-control" id="altura" value="" name="altura" required>
+                                <div class="invalid-feedback">
+                                    Ingrese el alto.
+                                </div>
+                                <label for="ancho" class="form-label">Ancho:</label>
+                                <input type="number" class="form-control" id="ancho" value="" name="ancho" required>
+                                <div class="invalid-feedback">
+                                    Ingrese el ancho.
+                                </div>
+                            </div>
+
+                            <div class="text-center col-md-6">
+                                <hr class="my-4">
+                                <button class="btn-grande text-uppercase fw-bold mb-2" type="submit">Guardar nuevas dimensiones</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+          </div>
+        </div>
+{{/partial}}
+
+
+{{#eq rol null}}
+
+    {{> layout.hbs}}
+
+{{/eq}}
+{{#eq rol "Duenio"}}
+
+    {{> layout_duenio.hbs}}
+
+{{/eq}}
+{{#eq rol "Voluntario"}}
+
+    {{> layout_voluntario.hbs}}
+
+{{/eq}}
+{{#eq rol "Rescatista"}}
+
+    {{> layout_rescatista.hbs}}
+
+{{/eq}}
+{{#eq rol "Administrador"}}
+
+    {{> layout_admin.hbs}}
+
+{{/eq}}

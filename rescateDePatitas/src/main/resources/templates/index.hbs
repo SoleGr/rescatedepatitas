@@ -1,0 +1,303 @@
+{{#partial "content"}}
+<!-- Hero Start -->
+    <div class="hero top">
+      <div class="container-fluid">
+        <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+          <div class="col-10 col-sm-8 col-lg-6">
+            <img src="img/portada.png" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="700"
+              height="500" loading="lazy">
+          </div>
+          <div class="col-lg-6">
+            <div class="hero-text">
+              <h1>El mejor aliado para tu mascota</h1>
+              <p>
+                ¡No pierdas nunca a tu mejor amigo! <br />
+                Registrala y recibí su collar con código QR. <br />
+                <br />
+              </p>
+                {{#eq rol.tipo null}}
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+                        <div class="hero-btn">
+                            <a class="btn btn-lg btn-login text-uppercase fw-bold mb-2" href="nueva_mascota">Quiero
+                                registrarla</a>
+                        </div>
+                        <div class="hero-btn">
+                            <a class="btn btn-lg btn-login text-uppercase fw-bold mb-2" href="registro_encontrada">Encontré una mascota</a>
+                        </div>
+                    </div>
+                {{/eq}}
+                {{#eq rol.tipo "Duenio"}}
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+                        <div class="hero-btn">
+                            <a class="btn btn-lg btn-login text-uppercase fw-bold mb-2" href="nueva_mascota">Quiero
+                                registrarla</a>
+                        </div>
+                    </div>
+                {{/eq}}
+                {{#eq rol.tipo "Voluntario"}}
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+                        <div class="hero-btn">
+                            <a class="btn btn-lg btn-login text-uppercase fw-bold mb-2" href="revisar_publicaciones.html">Revisar publicaciones</a>
+                        </div>
+                    </div>
+                {{/eq}}
+                {{#eq rol.tipo "Rescatista"}}
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+                        <div class="hero-btn">
+                            <a class="btn btn-lg btn-login text-uppercase fw-bold mb-2" href="registro_encontrada_qr_log.html">Encontré con QR</a>
+                        </div>
+                        <div class="hero-btn">
+                            <a class="btn btn-lg btn-login text-uppercase fw-bold mb-2" href="registro_encontrada_log.html">Encontré sin QR</a>
+                        </div>
+                    </div>
+                {{/eq}}
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+    <div class="wave-container">
+    <!-- Hero End -->
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#eff9ff" fill-opacity="1" d="M0,32L26.7,48C53.3,64,107,96,160,101.3C213.3,107,267,85,320,106.7C373.3,128,427,192,480,218.7C533.3,245,587,235,640,208C693.3,181,747,139,800,138.7C853.3,139,907,181,960,186.7C1013.3,192,1067,160,1120,144C1173.3,128,1227,128,1280,160C1333.3,192,1387,256,1413,288L1440,320L1440,0L1413.3,0C1386.7,0,1333,0,1280,0C1226.7,0,1173,0,1120,0C1066.7,0,1013,0,960,0C906.7,0,853,0,800,0C746.7,0,693,0,640,0C586.7,0,533,0,480,0C426.7,0,373,0,320,0C266.7,0,213,0,160,0C106.7,0,53,0,27,0L0,0Z"></path></svg>
+  </div>
+
+  <!-- Service Start -->
+  <div class="service">
+    <div class="container">
+      <div class="section-header text-center wow zoomIn" data-wow-delay="0.1s">
+        <p>Cómo te ayudamos con tus</p>
+        <h2>MASCOTAS</h2>
+      </div>
+      <div class="row">
+        <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.0s">
+          <div class="service-item">
+            <div class="service-icon">
+              <i class="fas fa-search-plus"></i>
+            </div>
+            <h3>Perdí mi mascota 🙁</h3>
+            <p>
+              Ingresá para mirar las publicaciones de mascotas encontradas o
+              para generar la tuya.
+            </p>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
+          <div class="service-item active">
+            <div class="service-icon">
+              <i class="fas fa-check-circle"></i>
+            </div>
+            <h3>Registrá tu mascota</h3>
+            <p>
+              Y obtené en tu domicilio una chapita con un código QR para que
+              siempre vuelva a casa.
+            </p>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.4s">
+          <div class="service-item">
+            <div class="service-icon">
+              <i class="fab fa-gratipay"></i>
+            </div>
+            <h3>Adoptá una mascota</h3>
+            <p>
+              Encontrá a tu próxima mascota entre las que están buscando hogar
+              o publicá tu deseo de tener una.
+            </p>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.6s">
+          <div class="service-item">
+            <div class="service-icon">
+              <i class="fas fa-hands"></i>
+            </div>
+            <h3>Dar en adopción</h3>
+            <p>
+              Generá una publicación y encontrá a la persona ideal para tu
+              mascota.
+            </p>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.8s">
+          <div class="service-item">
+            <div class="service-icon">
+              <i class="fas fa-dog"></i>
+            </div>
+            <h3>¡Encontré una mascota perdida!</h3>
+            <p>
+              Revisá publicaciones de mascotas perdidas o generá una y ayudala
+              a reencontrarse con su familia.
+            </p>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="1s">
+          <div class="service-item">
+            <div class="service-icon">
+              <i class="fas fa-hands-helping"></i>
+            </div>
+            <h3>Postulate para ayudar</h3>
+            <p>¡Hay una organización que necesita tu ayuda!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Service End -->
+
+  <!-- Adopcion Start -->
+  <section id="adoptar">
+    <div class="adopcion">
+      <div class="container">
+        <div class="section-header text-center wow zoomIn" data-wow-delay="0.1s">
+          <p>Ellos buscan hogar</p>
+          <h2>Adoptá</h2>
+        </div>
+        <div class="owl-carousel adopcion-carousel wow fadeInUp" data-wow-delay="0.1s">
+            {{#each mascotas}}
+            <div class="adopcion-item">
+            <div class="adopcion-img">
+              <img src="{{{fotos.[0].uRLfoto}}}" alt="Adopcion" />
+            </div>
+
+            <div class="adopcion-text">
+                <h2>{{nombre}}</h2>
+                <div class="adopcion-meta">
+                    <p><i class="far fa-calendar"></i>{{edad}} años</p>
+                    <p><i class="fas fa-map-marker-alt"></i>{{especie}}</p>
+                </div>
+                <p>
+                    {{descripcion}}
+                </p>
+              <a class="btn" href="">Ver perfil <i class="fa fa-angle-right"></i></a>
+            </div>
+          </div>
+            {{/each}}
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Adopcion End -->
+
+  <!-- Asociaciones Start -->
+  <div class="asoc wow fadeInUp" data-wow-delay="0.1s">
+    <div class="container">
+      <div class="section-header text-center">
+        <p>Conocelas o uní la tuya</p>
+        <h2>Asociaciones</h2>
+      </div>
+      <div class="owl-carousel asoc-carousel">
+        <div class="asoc-item">
+          <div class="asoc-img">
+            <img src="img/org1.jpg" alt="Image" />
+          </div>
+          <div class="asoc-text">
+            <p>
+              Lorem ipsum dolor sit amet consec adipis elit. Etiam accums
+              lacus eget velit tincid, quis suscip justo dictum.
+            </p>
+            <h3>El refugio</h3>
+            <h4>Villa Lugano, CABA</h4>
+          </div>
+        </div>
+        <div class="asoc-item">
+          <div class="asoc-img">
+            <img src="img/org2.png" alt="Image" />
+          </div>
+          <div class="asoc-text">
+            <p>
+              Lorem ipsum dolor sit amet consec adipis elit. Etiam accums
+              lacus eget velit tincid, quis suscip justo dictum.
+            </p>
+            <h3>Naricitas frias</h3>
+            <h4>San Martin, Buenos Aires</h4>
+          </div>
+        </div>
+        <div class="asoc-item">
+          <div class="asoc-img">
+            <img src="img/org3.png" alt="Image" />
+          </div>
+          <div class="asoc-text">
+            <p>
+              Lorem ipsum dolor sit amet consec adipis elit. Etiam accums
+              lacus eget velit tincid, quis suscip justo dictum.
+            </p>
+            <h3>El hogar de Claudia</h3>
+            <h4>Caseros, Buenos Aires</h4>
+          </div>
+        </div>
+        <div class="asoc-item">
+          <div class="asoc-img">
+            <img src="img/org4.png" alt="Image" />
+          </div>
+          <div class="asoc-text">
+            <p>
+              Lorem ipsum dolor sit amet consec adipis elit. Etiam accums
+              lacus eget velit tincid, quis suscip justo dictum.
+            </p>
+            <h3>Ayudacan</h3>
+            <h4>Flores, CABA</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Asociaciones End -->
+
+  <!-- About Start -->
+  <div class="about wow fadeInUp" data-wow-delay="0.1s" id="nosotros">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-5 col-md-6">
+          <div class="about-img">
+            <img src="img/nosotros.jpg" alt="Image" />
+          </div>
+        </div>
+        <div class="col-lg-7 col-md-6">
+          <div class="section-header text-left">
+            <p>Conocenos</p>
+            <h2>Sobre nosotros</h2>
+          </div>
+          <div class="about-text">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              Phasellus nec pretium mi. Curabitur facilisis ornare velit non
+              vulputate. Aliquam metus tortor, auctor id gravida condimentum,
+              viverra quis sem.
+            </p>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              Phasellus nec pretium mi. Curabitur facilisis ornare velit non
+              vulputate. Aliquam metus tortor, auctor id gravida condimentum,
+              viverra quis sem. Curabitur non nisl nec nisi scelerisque
+              maximus.
+            </p>
+            <a class="btn btn-lg btn-login text-uppercase fw-bold mb-2" href="">Sumate</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- About End -->
+{{/partial}}
+
+{{#eq rol null}}
+
+    {{> layout.hbs}}
+
+{{/eq}}
+{{#eq rol "Duenio"}}
+
+    {{> layout_duenio.hbs}}
+
+{{/eq}}
+{{#eq rol "Voluntario"}}
+
+    {{> layout_voluntario.hbs}}
+
+{{/eq}}
+{{#eq rol "Rescatista"}}
+
+    {{> layout_rescatista.hbs}}
+
+{{/eq}}

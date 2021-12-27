@@ -1,0 +1,251 @@
+{{#partial "content"}}
+<div class="content_wrapper">
+    <div class="content-header top">
+        <div class="container-fluid top">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                   <h1 class="m-0">Administrador</h1>
+                </div>
+            </div>
+
+    <!-- Main content -->
+        <div class="content">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-lg-3 col-6">
+                <!-- small box -->
+                <div class="small-box bg-info">
+                  <div class="inner">
+                    <h3>{{cantMascotas}}</h3>
+
+                    <p>Mascotas Registradas</p>
+                  </div>
+                  <div class="icon">
+                    <i class="ion ion-bag">🐱‍💻</i>
+                  </div>
+                </div>
+              </div>
+              <!-- ./col -->
+              <div class="col-lg-3 col-6">
+                <!-- small box -->
+                <div class="small-box bg-success">
+                  <div class="inner">
+                    <h3>{{cantMascotasEncontradas}}</h3>
+
+                    <p>Mascotas Encontradas</p>
+                  </div>
+                  <div class="icon">
+                    <i class="ion ion-stats-bars">🎉</i>
+                  </div>
+                </div>
+              </div>
+              <!-- ./col -->
+              <div class="col-lg-3 col-6">
+                <!-- small box -->
+                <div class="small-box bg-gradient-primary">
+                  <div class="inner">
+                    <h3>{{cantPubliEnAdopcion}}</h3>
+
+                    <p>Mascotas en Adopción</p>
+                  </div>
+                  <div class="icon">
+                    <i class="ion ion-person-add">🐶</i>
+                  </div>
+                </div>
+              </div>
+              <!-- ./col -->
+              <div class="col-lg-3 col-6">
+
+                <div class="small-box bg-danger">
+                  <div class="inner">
+                    <h3>{{cantIntencionAdopcion}}</h3>
+
+                    <p>Mascotas Perdidas</p>
+                  </div>
+                  <div class="icon">
+                    <i class="ion ion-pie-graph">😿</i>
+                  </div>
+                </div>
+              </div>
+              <!-- ./col -->
+              <section class="col-lg-5 connectedSortable">
+                <!-- Map card -->
+                <div class="card bg-gradient-primary">
+                  <div class="card-header border-0">
+                    <h3 class="card-title">
+                      <i class="fas fa-map-marker-alt mr-1"></i>
+                      Visitors
+                    </h3>
+                    <!-- card tools -->
+                    <div class="card-tools">
+                      <button
+                        type="button"
+                        class="btn btn-primary btn-sm daterange"
+                        title="Date range"
+                      >
+                        <i class="far fa-calendar-alt"></i>
+                      </button>
+                      <button
+                        type="button"
+                        class="btn btn-primary btn-sm"
+                        data-card-widget="collapse"
+                        title="Collapse"
+                      >
+                        <i class="fas fa-minus"></i>
+                      </button>
+                    </div>
+                    <!-- /.card-tools -->
+                  </div>
+                  <div class="card-body">
+                    <div
+                      id="world-map"
+                      style="height: auto; width: 100%; padding-left: 20%"
+                    >
+                      <img
+                        src="dist/img/Mapa_de_Argentina.svg.png"
+                        alt="argentina"
+                        style="width: 70%; height: auto"
+                      />
+                    </div>
+                    <!-- <div
+                      id="world-map"
+                      style="height: 250px; width: 100%"
+                    ></div> -->
+                  </div>
+                  <!-- /.card-body-->
+                  <div class="card-footer bg-transparent">
+                    <div class="row">
+                      <div class="col-4 text-center">
+                        <div id="sparkline-1"></div>
+                        <div class="text-white">Visitas</div>
+                      </div>
+                      <!-- ./col -->
+                      <div class="col-4 text-center">
+                        <div id="sparkline-2"></div>
+                        <div class="text-white">Usuarios Resgistrados</div>
+                      </div>
+                      <!-- ./col -->
+                      <div class="col-4 text-center">
+                        <div id="sparkline-3"></div>
+                        <div class="text-white">Chapitas entregadas</div>
+                      </div>
+                      <!-- ./col -->
+                    </div>
+                    <!-- /.row -->
+                  </div>
+                </div>
+                <!-- /.card -->
+              </section>
+              <section class="col-lg-7 connectedSortable">
+                <div class="col-lg-15">
+                  <div class="card card-primary card-outline">
+                    <div class="card-header">
+                      <h5 class="m-0">Crear Asociación</h5>
+                    </div>
+                    <div class="card-body">
+                      <p class="card-text">
+                        Llene este formulario para crear una Asociación.
+                      </p>
+
+                      <a href="../admin_nueva_asociacion" class="btn btn-primary"
+                        >Comenzar 🐱‍🏍</a>
+                    </div>
+                  </div>
+                  <!-- /.col-md-6 -->
+                  <div class="col-lg-15">
+                    <div class="card card-primary card-outline">
+                      <div class="card-header">
+                        <h5 class="m-0">Agregar Características Generales</h5>
+                      </div>
+                      <div class="card-body">
+                        <p class="card-text">
+                            Agregue una pregunta con sus respuestas posibles para la mascota.
+                        </p>
+                        <a href="../admin_caracteristica" class="btn btn-primary">
+                            Comenzar 🐶🐱
+                        </a>
+                      </div>
+                    </div>
+
+                    <div class="card card-primary card-outline">
+                      <div class="card-header">
+                        <h5 class="m-0">Agregar preguntas a Asociación</h5>
+                      </div>
+                      <div class="card-body">
+                        <p class="card-text">
+                          Seleccione una asociación en específico y agregue una pregunta con sus respuestas
+                            para esta.
+                        </p>
+                        <a href="../admin_preguntas_asociacion" class="btn btn-primary"
+                        >Comenzar 🏡</a>
+                      </div>
+                    </div>
+                      <div class="col-lg-15">
+                          <div class="card card-primary card-outline">
+                              <div class="card-header">
+                                  <h5 class="m-0">Agregar Voluntarios</h5>
+                              </div>
+                              <div class="card-body">
+                                  <p class="card-text">
+                                      Ingrese un usuario para darle el rol de voluntario de una Asociacion.
+                                  </p>
+
+                                  <a href="../admin_voluntarios" class="btn btn-primary"
+                                  >Comenzar 🐱‍🏍</a>
+                              </div>
+                          </div>
+                          <div class="col-lg-15">
+                              <div class="card card-primary card-outline">
+                                  <div class="card-header">
+                                      <h5 class="m-0">Modificar Dimensiones Fotos</h5>
+                                  </div>
+                                  <div class="card-body">
+                                      <p class="card-text">
+                                          Modifique las dimensiones de alto y ancho de las fotos.
+                                      </p>
+                                      <a href="../admin_fotos" class="btn btn-primary"
+                                      >Comenzar 🐱‍🏍</a>
+                                  </div>
+                              </div>
+
+
+                  </div>
+                  <!-- /.col-md-6 -->
+                </div>
+                  </div>
+                </div>
+              </section>
+                <!-- /.row -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+</div>
+{{/partial}}
+
+{{#eq rol null}}
+
+    {{> layout.hbs}}
+
+{{/eq}}
+{{#eq rol "Duenio"}}
+
+    {{> layout_duenio.hbs}}
+
+{{/eq}}
+{{#eq rol "Voluntario"}}
+
+    {{> layout_voluntario.hbs}}
+
+{{/eq}}
+{{#eq rol "Rescatista"}}
+
+    {{> layout_rescatista.hbs}}
+
+{{/eq}}
+{{#eq rol "Administrador"}}
+
+    {{> layout_admin.hbs}}
+
+{{/eq}}

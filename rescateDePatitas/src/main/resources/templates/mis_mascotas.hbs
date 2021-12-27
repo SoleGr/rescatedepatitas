@@ -1,0 +1,93 @@
+{{#partial "content"}}
+
+    <main>
+        <section class="py-5 text-center container">
+            <div class="row py-lg-5">
+                <div class="col-lg-6 col-md-8 mx-auto">
+                    <h1 class="fw-light">Mis mascotas</h1>
+                    <p class="lead text-muted">Accedé a la info de tus mascotas.</p>
+                    <p>
+                        <a href="nueva_mascota" class="btn-grande">+
+                            Agregar mascota</a>
+                    </p>
+                </div>
+            </div>
+
+        </section>
+
+        <div class="album py-5">
+            <div class="container">
+                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+                    {{#each mascotas}}
+                        <!--MASCOTA 1-->
+                        <div class="col">
+                            <div class="card shadow-sm">
+                                <!-- CAROUSEL-->
+                                <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                                    <div class="carousel-inner">
+                                        {{#each fotos}}
+                                            <div class="carousel-item active">
+                                                <img src="../{{uRLfoto}}" class="d-block w-100" alt="...">
+                                            </div>
+                                        {{/each}}
+                                    </div>
+                                    <button class="carousel-control-prev" type="button"
+                                            data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                        <span class="visually-hidden">Previous</span>
+                                    </button>
+                                    <button class="carousel-control-next" type="button"
+                                            data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                        <span class="visually-hidden">Next</span>
+                                    </button>
+                                </div>
+                                <!-- CAROUSEL-->
+                                <div class="card-body">
+                                    <h2>Nombre: {{nombre}}</h2>
+                                    <h6>Apodo: {{apodo}}</h6>
+                                    <h6>Especie: {{especie}}</h6>
+                                    <h6>Sexo: {{genero}}</h6>
+                                    <h6>Tamaño: {{tamanio}}</h6>
+                                    <p class="card-text">Descripcion: {{descripcion}}</p>
+                                    <div class="d-flex justify-content-between justify-content-between text-right">
+                                        <a class="btn-rojo fw-bold" style="color: #eff9ff" type="submit"
+                                           href="dar_adopcion">Dar en Adopción</a>
+                                        <a class="btn-rojo fw-bold" style="color: #eff9ff" type="submit"
+                                           href="dar_adopcion">Baja</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {{/each}}
+                    <!--FIN MASCOTA 1-->
+
+                </div>
+            </div>
+        </div>
+
+    </main>
+    <!-- Datos de registro-->
+{{/partial}}
+
+{{#eq rol null}}
+
+    {{> layout.hbs}}
+
+{{/eq}}
+{{#eq rol "Duenio"}}
+
+    {{> layout_duenio.hbs}}
+
+{{/eq}}
+{{#eq rol "Voluntario"}}
+
+    {{> layout_voluntario.hbs}}
+
+{{/eq}}
+{{#eq rol "Rescatista"}}
+
+    {{> layout_rescatista.hbs}}
+
+{{/eq}}
+

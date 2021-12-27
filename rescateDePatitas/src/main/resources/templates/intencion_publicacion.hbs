@@ -1,0 +1,60 @@
+{{#partial "content"}}
+
+    <div class="single">
+        <div class="container top">
+            <div class="row">
+                <h3>Publicacion Nro <span>{{publicacion.id}}</span></h3>
+                <p>Fecha: {{publicacion.fecha}}</p>
+                <div class="col-lg-6">
+                    <div class="single-content wow fadeInUp">
+                        <img src="/img/usuario.png">
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="sidebar">
+                        <div class="sidebar-widget wow fadeInUp">
+                            <h2 class="wavyy">Nombre: {{publicacion.adoptante.nombre}}</h2>
+                            <br>
+                            <h6>Estas son sus preferencias y comodidades:</h6>
+                            <div class="text-widget">
+                                {{#each publicacion.cuestionarioPreferenciasYComodidades.respuestas}}
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <h6>{{pregunta.pregunta}}</h6>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <h6>{{respuesta}}</h6>
+                                        </div>
+                                    </div>
+                                {{/each}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{{/partial}}
+
+{{#eq rol null}}
+
+    {{> layout.hbs}}
+
+{{/eq}}
+{{#eq rol "Duenio"}}
+
+    {{> layout_duenio.hbs}}
+
+{{/eq}}
+{{#eq rol "Voluntario"}}
+
+    {{> layout_voluntario.hbs}}
+
+{{/eq}}
+{{#eq rol "Rescatista"}}
+
+    {{> layout_rescatista.hbs}}
+
+{{/eq}}
