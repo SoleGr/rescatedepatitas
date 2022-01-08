@@ -13,4 +13,7 @@ Alumnos:
 | Nombre      | GitHub |
 | ----------- | ----------- |
 | Soledad Grilletta      | [SoleGr] (http://github.com/SoleGr)       |
-| Nahuel Farias   | [SoleGr] (http://github.com/SoleGr)         |
+| Nahuel Farias   | [NahuelFarias] (http://github.com/NahuelFarias         |
+| Pedro Kuljich   | [PedroKuljich] (http://github.com/PedroKuljich       |
+
+
