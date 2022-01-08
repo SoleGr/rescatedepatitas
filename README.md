@@ -12,8 +12,8 @@ Un administrador se encarga de dar de alta asociaciones. Estas tienen voluntario
 Alumnos:
 | Nombre      | GitHub |
 | ----------- | ----------- |
-| Soledad Grilletta      | [SoleGr] (http://github.com/SoleGr)       |
-| Nahuel Farias   | [NahuelFarias] (http://github.com/NahuelFarias         |
-| Pedro Kuljich   | [PedroKuljich] (http://github.com/PedroKuljich       |
+| Soledad Grilletta      | [SoleGr] (http://github.com/SoleGr) |
+| Nahuel Farias   | [NahuelFarias] (http://github.com/NahuelFarias) |
+| Pedro Kuljich   | [PedroKuljich] (http://github.com/PedroKuljich) |
 
 
