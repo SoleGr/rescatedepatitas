@@ -9,3 +9,8 @@ el collar de su mascota. En caso de que alguien encuentre a la mascota, podrá e
 dueño que su mascota fue encontrada.
 Un administrador se encarga de dar de alta asociaciones. Estas tienen voluntarios cuyo rol es revisar y aprobar (o rechazar) publicaciones.
 
+Alumnos:
+| Nombre      | GitHub |
+| ----------- | ----------- |
+| Soledad Grilletta      | [SoleGr] (http://github.com/SoleGr)       |
+| Nahuel Farias   | [SoleGr] (http://github.com/SoleGr)         |
