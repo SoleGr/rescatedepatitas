@@ -52,7 +52,7 @@ Para correr una copia del proyecto en forma local seguir las siguientes instrucc
 
 1. Clonar el repositorio.
  ```
-    git clone https://github.com/dds-utn/2021-ma-ma-grupo-04
+    git clone https://github.com/SoleGr/rescatedepatitas.git
 ```
 
 2. Crear una base de datos MySQL.
